@@ -154,7 +154,7 @@ while a < index:
         print("公主您输了！")
     a += 1
 print("游戏结束一共玩了{}次游戏".format(index))
-#循环嵌套打印9X9乘法表1
+#循环嵌套打印9X9乘法表
 row = 1
 while row <= 9:
     col = 1
