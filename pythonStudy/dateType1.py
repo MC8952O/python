@@ -152,9 +152,42 @@ for i in nameObject:
 '''
 range()函数：此函数可以生成一个数据集合列表
 说明：
-    1 range(起始:结束:步长) 步长不能为0
+    1 range(起始，结束，步长) 步长不能为0
     1.1 起始：默认为0
     1.2 步长：默认为1
     1.3 结束：不包含结束值
 ''' 
-print(type(range(1,100)))
+'''
+break、contiune的学习
+1 break：代表中断结束，满足条件直接结束本层循环
+2 continue：结束本次循环，继续进行下次循环(当continue的条件满足的时候，本次循环剩下的语句不在执行，直接进行下一次循环)
+'''
+# break eg:计算1~50的累加和，当大于200时循环结束
+sum = 0
+for item in range(1, 51):
+    if sum > 200:
+        break
+    sum += item
+    print("sum = {}".format(sum))
+#continue eg:求出奇数
+for item1 in range(1, 51):
+    if item1 % 2 == 0:
+        continue
+    print(item1)
+#break eg : 遍历到“m”时结束循环
+str1 = "我是mia.chen"
+for item2 in  str1:
+    if item2 == "m":
+        break
+    print(item2, end = "")
+#break eg : 不遍历“m”
+str1 = "我是mia.chen"
+for item2 in  str1:
+    if item2 == "m":
+        continue
+    print(item2)
+#使用for进行9*9乘法表输出
+for rowFor in range(1,10):
+    for colFor in range(1, rowFor):
+        print("{}X{}={}/t",format(rowFor, colFor, colFor*rowFor), end = " ")
+    print()
