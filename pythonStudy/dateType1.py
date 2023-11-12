@@ -98,11 +98,63 @@ while row <= 9:
     row += 1
 ##9*9乘法表
 i = 1
-j = 1
 while i <= 9:
+    j = 1
     while j <= i:
         print('{}X{}={}\t'.format(i, j, i*j), end="")
         j += 1
     print()
     i+=1
-
+# 打印直接三角形
+row1 = 1
+while row1 <= 7:
+    col= 1
+    while col <= row1:
+        print("*"/t, end="")
+        col += 1
+    print()
+    row1 += 1
+# 打印倒立的直角三角形
+row2 = 7
+while row2 >= 1:
+    col2 = 1
+    while col2 <= row2:
+        print("*",end = "\t")
+        col2 += 1
+    print()
+    row2 -= 1
+# 打印等腰三角形
+row3 = 1
+while row3 <= 5:
+    col3 = 1
+    while col3 <= 5-row3:
+        print(" ",end= "")
+        col3 += 1
+    col4 = 1
+    while col4 <= 2 * ro3 - 1:
+        print("*",end = " ")
+        col4 += 1
+    print()
+    row3 += 1
+'''
+for循环
+代码格式：
+for 临时变量 in 序列:
+    代码块1
+    代码块2
+    ......
+特点：遍历操作，一次的取集合容器中的每个值
+'''
+#示例1
+nameObject = "mia.chen"
+for i in nameObject:
+    print(i)
+'''
+range()函数：此函数可以生成一个数据集合列表
+说明：
+    1 range(起始:结束:步长) 步长不能为0
+    1.1 起始：默认为0
+    1.2 步长：默认为1
+    1.3 结束：不包含结束值
+''' 
+print(type(range(1,100)))
