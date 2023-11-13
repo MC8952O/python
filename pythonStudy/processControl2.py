@@ -163,3 +163,146 @@ while row <= 9:
         col += 1
     print()
     row += 1
+##9*9乘法表
+i = 1
+while i <= 9:
+    j = 1
+    while j <= i:
+        print('{}X{}={}\t'.format(i, j, i*j), end="")
+        j += 1
+    print()
+    i+=1
+# 打印直接三角形
+row1 = 1
+while row1 <= 7:
+    col= 1
+    while col <= row1:
+        print("*"/t, end="")
+        col += 1
+    print()
+    row1 += 1
+# 打印倒立的直角三角形
+row2 = 7
+while row2 >= 1:
+    col2 = 1
+    while col2 <= row2:
+        print("*",end = "\t")
+        col2 += 1
+    print()
+    row2 -= 1
+# 打印等腰三角形
+row3 = 1
+while row3 <= 5:
+    col3 = 1
+    while col3 <= 5-row3:
+        print(" ",end= "")
+        col3 += 1
+    col4 = 1
+    while col4 <= 2 * ro3 - 1:
+        print("*",end = " ")
+        col4 += 1
+    print()
+    row3 += 1
+'''
+for循环
+代码格式：
+for 临时变量 in 序列:
+    代码块1
+    代码块2
+    ......
+特点：遍历操作，一次的取集合容器中的每个值
+'''
+#示例1
+nameObject = "mia.chen"
+for i in nameObject:
+    print(i)
+'''
+range()函数：此函数可以生成一个数据集合列表
+说明：
+    1 range(起始，结束，步长) 步长不能为0
+    1.1 起始：默认为0
+    1.2 步长：默认为1
+    1.3 结束：不包含结束值
+''' 
+'''
+break、contiune的学习
+1 break：代表中断结束，满足条件直接结束本层循环
+2 continue：结束本次循环，继续进行下次循环(当continue的条件满足的时候，本次循环剩下的语句不在执行，直接进行下一次循环)
+'''
+# break eg:计算1~50的累加和，当大于200时循环结束
+sum = 0
+for item in range(1, 51):
+    if sum > 200:
+        break
+    sum += item
+    print("sum = {}".format(sum))
+#continue eg:求出奇数
+for item1 in range(1, 51):
+    if item1 % 2 == 0:
+        continue
+    print(item1)
+#break eg : 遍历到“m”时结束循环
+str1 = "我是mia.chen"
+for item2 in  str1:
+    if item2 == "m":
+        break
+    print(item2, end = "")
+#break eg : 不遍历“m”
+str1 = "我是mia.chen"
+for item2 in  str1:
+    if item2 == "m":
+        continue
+    print(item2)
+#使用for进行9*9乘法表输出
+for rowFor in range(1,10):
+    for colFor in range(1, rowFor):
+        print("{}X{}={}/t",format(rowFor, colFor, colFor*rowFor), end = " ")
+    print()
+#其他的循环结构 --- 注意事项
+# for ..... else
+for item in range(1, 11):
+    print(item, end = " ")
+    if item ==5:
+        break
+else:
+    print("上面的循环只要出现break，那么else就不会执行了")
+#
+# while ..... else
+#练习题：
+'''
+1 猜年龄小游戏，有三点需求
+    1.1 允许用户最多尝试三次
+    1.2 每尝试三次后，如果还没猜对，就问用户是否还想继续玩，如果回答Y或者y，就继续让其猜三次，以此往复，如果回答N或者n，就退出程序
+    1.3 猜对了，就直接退出
+2 小王身高1.75，体重80.5kg，根据BMI公式（体重除以身高的平方）帮小王计算他的BMI指数，并根据BMI指数：
+    低于18.5：过轻
+    18.5-25：正常
+    25-28：过重
+    28-32：肥胖
+    高于32：严重肥胖
+用if-elif判断并打印结果
+'''
+#1 猜年龄小游戏
+times = 1
+import random
+randomAge = random.randint(17, 19)
+while times <= 3:
+    age = int(input("请输入您猜的年龄：")) 
+    if age == randomAge:
+        print("恭喜您猜对了！")
+        break
+    elif age < randomAge or age > randomAge:
+        times += 1
+print("您三次还没猜对，请问是否继续玩？答Y或者y：继续，答N或者n：退出")
+answer =input("请输入您的答案：")
+timesAnswer = 1
+if answer == "Y" or answer == "y":
+    while timesAnswer <= 3:
+        age = int(input("请输入您猜的年龄：")) 
+        if age == randomAge:
+            print("恭喜您猜对了！")
+            break
+        elif age < randomAge or age > randomAge:
+            timesAnswer += 1
+elif answer == "N" or answer == "n":
+    print("退出程序")
