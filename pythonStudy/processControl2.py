@@ -293,7 +293,7 @@ while times <= 1:
             i += 1 
         elif age == randomAge:
             print("恭喜您猜对了！")
-            times = 2
+            times = 3
             break
     else:
         print("您三次还没猜对，请问是否继续玩？答Y或者y：继续，答N或者n：退出")

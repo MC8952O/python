@@ -45,3 +45,54 @@ strTest3 = '   hello mia.chen  '
 print('去除左边空格：{}'.format(strTest3.lstrip()))
 strTest4 = '   hello mia.chen  '
 print('去除右边空格：{}'.format(strTest4.rstrip()))
+#查看a,b是否是同一个对象
+a = 'hello'
+print('a的内存地址是：{}'.format(id(a)))
+b = a
+print('b的内存地址是：{}'.format(id(b)))
+'''
+查找字符串
+find 查找目标对象在序列中的索引，如果不存在则返回-1
+find()只会显示目标对象在序列中第一个出现的索引
+'''
+dataStr = 'I love python'
+print('查找字符串：{}'.format(dataStr.find(' ')))
+'''
+index()函数
+找到目标对象在序列中的索引 返回索引，若没有找到对应的目标索引。则报错
+'''
+print('查找p在序列中的索引：{}'.format(dataStr.index('p')))
+'''
+startswith():判断以...开头
+'''
+print(dataStr.startswith('I')) #Ture
+print(dataStr.startswith('p')) #false
+'''
+endswith()以什么结尾
+'''
+print(dataStr.endswith('on')) #True
+print(dataStr.endswith('I')) #False
+'''
+大小写转换
+1. 首字母大写 capitalized()
+2. 全大写 upper()
+3. 全小写 lower()
+'''
+# 首字母大写
+print(dataStr.capitalize()) #I love python
+print(dataStr.upper()) #I LOVE PYTHON
+print(dataStr.lower()) #i love python
+'''
+切片
+[start:end:step] 左闭右开
+
+'''
+sliceStr = 'hello mia good good study'
+#获取0~5之间的字符
+print(sliceStr[2:5]) #llo
+#获取2以后的字符
+print(sliceStr[2:]) #llo mia good good study
+#完整字符
+print(sliceStr[:])
+#1~3
+print(sliceStr[:3])
