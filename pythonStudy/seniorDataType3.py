@@ -96,3 +96,5 @@ print(sliceStr[2:]) #llo mia good good study
 print(sliceStr[:])
 #1~3
 print(sliceStr[:3])
+#倒序输出 负号
+print(sliceStr[::-1])
