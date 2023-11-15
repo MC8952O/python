@@ -47,7 +47,22 @@
         3.3.2 index() 从元组中找出某个值第一个匹配项的索引位置 语法：tuple.index(obj)
                 
 4 字典及常用方法
+    4.1 定义：是一种无序的数据集合，使用{}表示，数据项之间使用“，”分割，数据项的格式为：key:value
+    4.2 特点：字典不是序列，不能使用索引进行访问，只能通过键进行访问，且不key不能重复 支持对数据增删改查进行操作
+    4.4 如果key存在重复的，后者会覆盖前者
+    4.4 常用方法：
+        4.3.1 clear() 清空字典 语法：dict.clear()
+        4.3.2 copy() 返回字典的浅复制 语法：dict.copy()
+        4.3.3 fromkeys(seq[, val]) 创建一个新字典，以序列seq中元素做字典的键，val为字典所有键对应的初始值 语法：dict.fromkeys(seq[, val])
+        4.3.4 get(key, default = None) 返回指定键的值，如果值不在字典中返回default值 语法：dict.get(key, default = None)
+        4.3.5 items() 以列表返回可遍历的(键, 值) 元组数组 语法：dict.items()
+        4.3.6 keys() 返回一个迭代器，可以使用list()来转换为列表 语法：dict.keys()
+        4.3.7 pop(key[, default]) 删除字典给定键key所对应的值，返回值为被删除的值，key值必须给出，否则返回default值 语法：
+
 5 共有操作
+    5.1合并操作 适用于字符串、列表、元组
+    5.2 复制操作 适用于字符串、列表、元组
+    5.3 in判断
 6 序列(集合)
     6.1 定义：就是一组按照顺序排列的值
     6.2 分类：字符串、列表、元组
@@ -215,3 +230,63 @@ myTuple[6][1] = 'mia'
 print(myTuple)
 #统计元组中某个元素出现的次数
 print(myTuple.count(1)) #2
+myDict = {}
+print(type(myDict)) #<class 'dict'>
+#添加数据
+myDict['name'] = 'mia'
+print(myDict) #{'name': 'mia'}
+myDict['age'] = 18
+myDict['jobNme'] = 'teacher'
+print(myDict) #{'name': 'mia', 'age': 18, 'jobNme': 'teacher'}
+# 申明一个字典时初始化值
+myDict1 = {'name': 'mia', 'age': 16, 'jobName': 'teacher'}
+#计算长度
+print(len(myDict1)) #3
+# 查找--通过键查找对应的值
+print(myDict['name']) #mia
+# 修改
+myDict['name'] = 'mia.chen'
+print(myDict) #{'name': 'mia.chen', 'age': 18, 'jobNme': 'teacher'}
+#获取所有的键
+print(myDict.keys()) #dict_keys(['name', 'age', 'jobNme'])
+#获取所有的值
+print(myDict.values) #dict_values(['mia.chen', 18, 'teacher'])
+#获取所有的键和值
+print(myDict.items()) #dict_items([('name', 'mia.chen'), ('age', 18), ('jobNme', 'teacher')]) 
+# 遍历字典
+for item in myDict.items():
+    print(item)             #('name', 'mia.chen') ('age', 18) ('jobNme', 'teacher')
+#分别获取键和值--for 遍历
+for key, value in myDict.item():
+    print('{}:{}'.format(key, value))       #name:mia.chen age:18 jobNme:teacher
+#更新字典 --update() -修改
+myDict.update({'name':'情绪稳定'})
+print(myDict) #{'name': '情绪稳定', 'age': 18, 'jobNme': 'teacher'}
+#更新字典 --uodate() -添加
+myDict.update({'school': '北京大学'})
+print(myDict) #{'name': '情绪稳定', 'age': 18, 'jobNme': 'teacher', 'school': '北京大学'}
+#更新update总结，如果键存在做修改操作，如果不存在做新增操作
+#删除字典中的元素
+del myDict['school']
+print(myDict) #{'name': '情绪稳定', 'age': 18, 'jobNme': 'teacher'}
+#pop删除
+myDict.pop('age')
+print(myDict) #{'name': '情绪稳定', 'jobNme': 'teacher'}
+#对字典进行排序操作 sorted()
+#按照key排序
+print(sorted(myDict.items(), key = lambda d:d[0])) #[('jobNme', 'teacher'), ('name', '情绪稳定')]   按照键排序
+#按照value排序
+print(sorted(myDict.item(), value = lambda d:d[1])) #[('name', '情绪稳定'), ('jobNme', 'teacher')]   按照值排序
+# 共有方法
+strA = '你好，我是mia'
+strB = '我正在学习python'
+print(strA + strB) #你好，我是mia我正在学习python
+listA = list(range(10))
+listB = list(range(10,20))
+print(listA + listB) #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10...] 列表合并
+#复制操作 使用* 进行复制
+print(strA * 2) #你好，我是mia你好，我是mia
+print(listA*2) #[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0...]
+#判断对象是否存在
+print('我' in strA) #True
+print('da' in strA) #False
