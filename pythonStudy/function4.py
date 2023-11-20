@@ -20,6 +20,14 @@
         5.4.1 定义：当参数不确定个数时使用
         5.4.2 关键字参数的定义：在形参前面加上**，表示可变参数，可变参数是一个字典
         5.4.3 在函数体内，关键字参数的key必须是s一个字符串
+6 返回值 return
+    6.1 概念：函数执行结束，返回一个对象，使用关键字：return，否则返回null
+    6.2 return可以返回任意数据类型
+    6.3 在一个函数内可以出现多个return多个关键字，但是只能执行一个return关键字
+    6.4 在函数内体执行了return，函数就结束了，return后面的代码不会执行
+7 函数嵌套调用
+    7.1 
+
 '''
 # 输出个人信息
 def personInformation():
@@ -78,4 +86,60 @@ def complexFunc(b , *args, **kwargs):
     print(args)
     print(kwargs)
 complexFunc('他是', 1, name = 'niudehua')
-        
+def sum_return(a, b):
+    sum = a + b
+    return sum
+print(sum_return(1, 20))# 将结果返回函数调用的地方，print()打印输出
+# 计算累计和函数
+def sumAdd(a, b):
+    sum = 0
+    for i in range(a, b+1):
+        sum += i
+    return sum
+print(sumAdd(1,100))
+def sumadd(num):
+    sum = 0
+    i = 1
+    while i <= num:
+        sum += i
+        i += 1
+    return sum
+print(sumadd(100))
+def A():
+    print('---------------A start----------------')
+    print('---------------A 执行代码----------------')
+    print('---------------A end----------------')
+def B():
+    '''
+    嵌套使用A函数
+    '''
+    print('---------------B start----------------')
+    A()
+    print('---------------B end----------------')
+B()
+# 用函数求接受N个数，求这些参数的和
+def sumA(*args):
+    sum = 0
+    for i in args:
+        sum += i
+    return sum
+print(sumA(1,200, 100, 2222))
+'''def sumB():
+    element = input()
+    sum = 0
+    numList = [int(i) for i in str(element).split()]
+    for i in numList:
+        sum += i
+    return sum 
+print(sumB())'''
+def egList(*args):
+    sumList = []
+    resultList = []
+    for i in args:
+        sumList.append(i)
+    print(sumList)
+    for j in range(len(sumList)):
+        if j % 2 != 0:
+            resultList.append(sumList[j])
+    return resultList
+print(egList(0, 1, 2, 3, 4, 5, 7, 8, 9))
