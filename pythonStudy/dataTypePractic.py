@@ -118,11 +118,77 @@ for n in range(len(numList)-1):
             numList[n] = a
 print(numList[indexNum-1])'''
 # 用于求两个整数的最大公约数（GCD）。
-numA = int(input('请输入一个整数：'))
+'''numA = int(input('请输入一个整数：'))
 numB = int(input('请输入一个整数：'))
 i = 0
 while i <= numA:
-    if numA / i == 0:
-        
-
-
+    if numA / i == 0:'''
+'''def maxCommonDivisor(num1,num2):
+    a = 0
+    if num1 == num2:
+        return num1
+    elif num1 > num2:
+        if num1 % num2 == 0:
+            return num2
+        elif num1 % num2 != 0:
+            while num1 % num2 != 0:
+                a = num1 % num2
+                num1 = num2
+                num2 = a
+            return num2
+    elif num1 < num2:
+        if num2 % num1 ==0:
+            return num1
+        while num2 % num1 != 0:
+            a = num2 % num1
+            num2 = num1
+            num1 = a
+        return num1              
+print(maxCommonDivisor(32,8))'''
+'''def ends_with(string1, string2):
+    if string1.endswith(string2):
+        return True
+    else:
+        return False
+print(ends_with('abc', 'bc'))
+'''
+'''def multiply_numbers_in_string(num_string):
+    # 将字符串输入转换为列表
+    num_list = list(map(int, num_string.split()))
+    # 在此处编写你的代码
+    integrable = 1
+    for i in range(len(num_list)):
+         integrable *= num_list[i]
+    return integrable
+# 获取输入字符串
+num_string = input()
+# 调用函数
+print(multiply_numbers_in_string(num_string))'''
+'''def is_string_isogram(word):
+    # 将单词转换为小写
+    word = word.lower()
+    len1 = len(word)
+    len2 = len(set(word))
+    return len1 == len2
+word = input('请输入字符：')
+# 调用函数
+print(is_string_isogram(word))'''
+'''def count_binary_ones(num):
+    # 此处写你的代码 
+    egbin = bin(num)
+    return egbin.count('1')
+# 从标准输入读取一个整数
+num = int(input())
+# 调用函数
+print(count_binary_ones(num))'''
+def fibonacci_number(n):
+    # 在此处编写你的代码
+    # 1 1 2 3 5 8 13 21 34
+    if n <= 1:
+        return 1
+    else:
+        return fibonacci_number(n-1) + fibonacci_number(n-2)
+# 输入n的整数
+n = 7
+# 调用函数
+print(fibonacci_number(n))
