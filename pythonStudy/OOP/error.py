@@ -46,3 +46,16 @@ except Exception as msg:
     print(msg)
 else:
     print('当try代码块没出现异常的情况下才会执行的代码')
+finally:
+    print('去你大爷')
+#自定义异常
+class Toolongstr(Exception):
+    def __init__(self, leng):
+        self.leng = leng
+    def __str__(self):
+        return '不超过30'
+def name_test():
+    name = input('请输入姓名:')
+    if len(name) > 4:
+        raise Toolongstr(len(name))
+name_test
