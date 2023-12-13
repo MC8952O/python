@@ -5,6 +5,7 @@ __slots__学习
     节约内存空间
 在继承关系中使用 __slots__
     子类未声明 __slots__时，那么是不会继承父类的slots，此时子类可以随意赋值
+    子类申明了 __slots__时，继承父类的__slots__,也就是子类__slots__的范围未 自身的slots+父类的slots
 '''
 class Student:
     __slots__ = ('name', 'age')
