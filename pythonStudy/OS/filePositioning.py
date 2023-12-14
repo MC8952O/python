@@ -14,4 +14,4 @@ with open('D:\OS\Test\SeekFile.txt', 'rb') as after_file:
     content = after_file.read(2)
     print(content.decode('gbk'))
     after_file.seek(-2,1)
-    print(after_file.read(4).decode('gbk'))
+    print(after_file.read(4).decode('gbk'))#####

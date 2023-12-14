@@ -1,8 +1,14 @@
 '''文件操作
 文件默认编码格式为GPK，可以设置为utf-8
 步骤：
-1 打开文件： open('文件路径',类型)
-2 
+1 打开文件： open('文件路径',类型,encoding) encoding 编码格式
+    r r+ 只读 适用普通读取场景
+    rb rb+ 适用于文件图片、视频、音频
+    w w+ wb wb+ a ab
+        w wb+ w+ 如果存在则覆盖，如果不存在则新建  二进制默认情况下使用gbk
+        a ab a+在原有的文件末尾及进行追加
+    
+    
 '''
 '''#打开文件
 fObj = open('D:\OS\Test\mia.txt', 'r', encoding = 'utf-8') # W模式 若文件已存在，会覆盖文档见以及内容，若不存在则新增
@@ -44,3 +50,5 @@ f.close()'''
 # with关键字 自动关闭文件 自动释放打开关联的对象
 with open('D:\OS\Test\mia2.txt', 'w') as f:
     f.write('woshi mia')
+
+

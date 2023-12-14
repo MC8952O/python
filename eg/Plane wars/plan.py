@@ -32,8 +32,8 @@ class HeroPlan:
             self.x += 10
         pass
     def display(self):
-        '''飞机在窗口中的显示
-        :return
+        '''
+        飞机在窗口中的显示
         '''
         self.screen.blit(self.image, (self.x, self.y))
         #子弹展示逻辑
