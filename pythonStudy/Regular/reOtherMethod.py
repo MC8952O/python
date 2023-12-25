@@ -2,6 +2,7 @@
 re模块其它方法的学习
 1 compile将正则表达式模式编写成一个正则表达式对象
 2 search() 在全文中进行匹配，匹配到就返回
+3 findall(pattern ,str, flag) 匹配所有返回一个列表，
 '''
 
 import re
@@ -14,3 +15,4 @@ strA = '爱国敬业民主法制,爱国敬业民主法制'
 res = re.search('爱国',strA)
 print(res)
 print(res.group())
+res = re.findall()
